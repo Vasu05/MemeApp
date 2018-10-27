@@ -17,7 +17,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var mBottomTextField: UITextField!
     
     @IBOutlet weak var mCameraBtn: UIButton!
-    
+    @IBOutlet weak var mAlbumsBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         mTopTextField.delegate = self
@@ -29,6 +29,9 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
         mCameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
+    
+    
+    // MARK: TextFieldDelegate
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.text = ""
         return true;
@@ -38,13 +41,11 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
         return true;
     }
     
+    // MARK: ButtonPressedMethod
     
     @IBAction func cameraBtnPressed(_ sender: Any) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+       
+        self.openImageViewController(mCameraBtn)
         
     }
     @IBAction func shareBtnPressed(_ sender: Any) {
@@ -54,11 +55,20 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     @IBAction func albumsBtnPressed(_ sender: Any) {
         
+        self.openImageViewController(mAlbumsBtn)
+    }
+    
+    
+    
+    func openImageViewController(_ buttonType:UIButton) -> Void {
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.sourceType = buttonType.isEqual(mCameraBtn) ? .camera:.photoLibrary
         present(imagePicker,animated:  true,completion: nil)
     }
     
+    //MARK: ImagePickerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{

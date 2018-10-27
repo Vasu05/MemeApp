@@ -176,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="mAlbumsBtn" destination="A6N-ea-ytA" id="A7P-Vk-6gO"/>
                         <outlet property="mBottomTextField" destination="bho-Zu-6ro" id="Pcq-lJ-oX3"/>
                         <outlet property="mCameraBtn" destination="Azy-FU-Wfs" id="AQZ-gp-Iku"/>
                         <outlet property="mImageView" destination="PPT-wg-3sG" id="OEc-av-cnG"/>
