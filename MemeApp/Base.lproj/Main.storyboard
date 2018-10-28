@@ -51,7 +51,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-rI-jv2" userLabel="CameraView">
                                         <rect key="frame" x="0.0" y="64" width="320" height="420"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-wg-3sG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-wg-3sG">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
@@ -63,7 +63,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Text" borderStyle="roundedRect" placeholder="Bottom Text" textAlignment="center" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Zu-6ro">
                                                 <rect key="frame" x="0.0" y="356" width="320" height="48"/>
@@ -180,6 +180,7 @@
                         <outlet property="mBottomTextField" destination="bho-Zu-6ro" id="Pcq-lJ-oX3"/>
                         <outlet property="mCameraBtn" destination="Azy-FU-Wfs" id="AQZ-gp-Iku"/>
                         <outlet property="mImageView" destination="PPT-wg-3sG" id="OEc-av-cnG"/>
+                        <outlet property="mShareBtn" destination="Mxe-0s-X34" id="xE5-yF-yIv"/>
                         <outlet property="mTopTextField" destination="hYh-2l-j4V" id="b5B-VT-ifv"/>
                     </connections>
                 </viewController>
