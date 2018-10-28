@@ -21,6 +21,8 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var mCameraBtn: UIButton!
     @IBOutlet weak var mAlbumsBtn: UIButton!
     @IBOutlet weak var mShareBtn: UIButton!
+    @IBOutlet weak var mDownloadBtn: UIButton!
+    @IBOutlet weak var mMemedView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         mCameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        mShareBtn.isEnabled  = !( mImageView.image == nil )
+        
         self.suscriberToKeyBoardNotification()
     }
     
@@ -61,9 +63,12 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
             }
             break;
             case .denied:
+                 showDialog(title: "Error", desc: "Provide Camera Acess Permission")
                  print("no camera permission ")  // The user has previously denied access.
             return
             case .restricted:
+                showDialog(title: "Error", desc: "Provide Camera Acess Permission")
+
                 print("no camera permission ") // The user can't grant access due to restrictions.
             return
         }
@@ -93,6 +98,8 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
             print("PHAuthorizationStatus.Restricted")
             break
         case .denied:
+            showDialog(title: "Photos", desc: "Provide Photos Acess Permission")
+
             print("PHAuthorizationStatus.Denied")
            
             break
@@ -173,6 +180,19 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBAction func shareBtnPressed(_ sender: Any) {
         
         
+        if let image = mImageView.image{
+            
+            let items = [image]
+            
+            let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            self.present(activityController,animated: true,completion: nil)
+        }
+        else{
+            showDialog(title: "Error", desc: "Please add image to view")
+        }
+        
+       
+        
     }
     
     @IBAction func albumsBtnPressed(_ sender: Any) {
@@ -202,12 +222,42 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     func generateMemedImage() -> UIImage {
         
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(self.mMemedView.frame.size)
+        mMemedView.drawHierarchy(in: self.mMemedView.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         return memedImage
+    }
+    
+    
+    @IBAction func  saveImage(_ sender: Any)  {
+        
+        if  mImageView.image != nil{
+            let memedImage = generateMemedImage()
+        UIImageWriteToSavedPhotosAlbum(memedImage,self ,#selector(image(_:didFinishSavingWithError:contextInfo:)),nil)
+            
+        }else{
+            showDialog(title: "Error", desc: "Please add image to view")
+        }
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        
+        if  error == nil  {
+            showDialog(title: "Success", desc: "Image saved successfully ! ")
+        }else{
+            showDialog(title: "Error", desc: "Error Occured while saving photos ! ")
+
+        }
+    }
+    
+    
+    func showDialog(title:String,desc:String)  {
+        
+        let alert = UIAlertController(title: title, message: desc, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "OK", style:.default ))
+        present(alert,animated: true)
     }
     
 }
