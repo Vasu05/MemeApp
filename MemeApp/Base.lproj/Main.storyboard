@@ -24,7 +24,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxe-0s-X34">
-                                                <rect key="frame" x="274" y="17" width="30" height="30"/>
+                                                <rect key="frame" x="254" y="0.0" width="66" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="66" id="QxC-WS-Yh0"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="shareBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQb-OZ-Mxi"/>
                                                 </connections>
@@ -36,22 +39,46 @@
                                                     <constraint firstAttribute="width" constant="30" id="Mn8-5w-E3u"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz2-9W-V5I">
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="66" id="Ah4-kK-S6I"/>
+                                                    <constraint firstAttribute="height" constant="64" id="hZg-DL-Aut"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <connections>
+                                                    <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEG-Nh-fEX"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="Ayx-Ht-O9w">
+                                                <rect key="frame" x="16" y="16" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="AUh-k2-mWE"/>
+                                                    <constraint firstAttribute="width" constant="30" id="CyT-ln-h2c"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Mxe-0s-X34" secondAttribute="bottom" constant="17" id="2Sb-kr-TJY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mxe-0s-X34" secondAttribute="bottom" id="2Sb-kr-TJY"/>
                                             <constraint firstAttribute="trailing" secondItem="I0X-rz-umY" secondAttribute="trailing" constant="16" id="4KU-4Y-ttL"/>
                                             <constraint firstItem="I0X-rz-umY" firstAttribute="top" secondItem="5Xt-0x-icy" secondAttribute="top" constant="17" id="4Xd-jL-wSO"/>
                                             <constraint firstAttribute="height" constant="64" id="Ghc-eM-Iol"/>
-                                            <constraint firstItem="Mxe-0s-X34" firstAttribute="top" secondItem="5Xt-0x-icy" secondAttribute="top" constant="17" id="KKe-ci-AnX"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mxe-0s-X34" secondAttribute="trailing" constant="16" id="ZUi-et-cWG"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ayx-Ht-O9w" secondAttribute="bottom" constant="18" id="H19-D7-FUe"/>
+                                            <constraint firstItem="Mxe-0s-X34" firstAttribute="top" secondItem="5Xt-0x-icy" secondAttribute="top" id="KKe-ci-AnX"/>
+                                            <constraint firstItem="cz2-9W-V5I" firstAttribute="top" secondItem="5Xt-0x-icy" secondAttribute="top" id="P2I-hO-2td"/>
+                                            <constraint firstAttribute="bottom" secondItem="cz2-9W-V5I" secondAttribute="bottom" id="YQs-WI-8IY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mxe-0s-X34" secondAttribute="trailing" id="ZUi-et-cWG"/>
+                                            <constraint firstItem="cz2-9W-V5I" firstAttribute="leading" secondItem="5Xt-0x-icy" secondAttribute="leading" id="cmI-if-mOC"/>
+                                            <constraint firstItem="Ayx-Ht-O9w" firstAttribute="leading" secondItem="5Xt-0x-icy" secondAttribute="leading" constant="16" id="dWB-zN-fp5"/>
+                                            <constraint firstItem="Ayx-Ht-O9w" firstAttribute="top" secondItem="5Xt-0x-icy" secondAttribute="top" constant="16" id="jxq-Kj-sFm"/>
                                             <constraint firstAttribute="bottom" secondItem="I0X-rz-umY" secondAttribute="bottom" constant="17" id="vgP-Ip-QHL"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-rI-jv2" userLabel="CameraView">
                                         <rect key="frame" x="0.0" y="64" width="320" height="420"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-wg-3sG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-wg-3sG">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
@@ -63,7 +90,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom Text" borderStyle="roundedRect" placeholder="Bottom Text" textAlignment="center" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Zu-6ro">
                                                 <rect key="frame" x="0.0" y="356" width="320" height="48"/>
@@ -179,17 +206,21 @@
                         <outlet property="mAlbumsBtn" destination="A6N-ea-ytA" id="A7P-Vk-6gO"/>
                         <outlet property="mBottomTextField" destination="bho-Zu-6ro" id="Pcq-lJ-oX3"/>
                         <outlet property="mCameraBtn" destination="Azy-FU-Wfs" id="AQZ-gp-Iku"/>
+                        <outlet property="mDownloadBtn" destination="cz2-9W-V5I" id="VL1-Zj-pE4"/>
                         <outlet property="mImageView" destination="PPT-wg-3sG" id="OEc-av-cnG"/>
+                        <outlet property="mMemedView" destination="hrc-rI-jv2" id="mcQ-jZ-s4w"/>
+                        <outlet property="mShareBtn" destination="Mxe-0s-X34" id="xE5-yF-yIv"/>
                         <outlet property="mTopTextField" destination="hYh-2l-j4V" id="b5B-VT-ifv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80.799999999999997" y="25.637181409295355"/>
+            <point key="canvasLocation" x="80.625" y="25.35211267605634"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cameraicon" width="37.5" height="37.5"/>
         <image name="Shareicon" width="37.5" height="37.5"/>
+        <image name="download" width="75" height="75"/>
     </resources>
 </document>
