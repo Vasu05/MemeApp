@@ -153,7 +153,7 @@ extension MemeHomePageVC{
     
     func save() {
         
-        let _meme = Meme(toptext: mTopTextField.text!, bottomText: mBottomTextField.text!, originalImage: mImageView.image!, memedImage: memedImage)
+        _ =  MemeModel( mTopTextField.text!, mBottomTextField.text!, mImageView.image!, memedImage)
     }
     
 }

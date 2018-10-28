@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeHomePageVC.swift
 //  MemeApp
 //
 //  Created by vasu on 24/10/18.
@@ -28,8 +28,8 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mTopTextField.delegate = self
-        mBottomTextField.delegate = self
+        configureUI(mTopTextField)
+        configureUI(mBottomTextField)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,15 +45,19 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     
     
-    func configureUI()  {
+    func configureUI(_ textField:UITextField)  {
+        
         let mMemeTextAttributes :[NSAttributedString.Key:Any] = [
             NSAttributedString.Key.strokeColor: UIColor.black,
-            NSAttributedString.Key.foregroundColor :UIColor.clear,
-            NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!
-        ];
+            NSAttributedString.Key.foregroundColor :UIColor.white,
+            NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
+            NSAttributedString.Key.strokeWidth: -3
+        ]
         
-        mTopTextField.defaultTextAttributes = mMemeTextAttributes
-        mBottomTextField.defaultTextAttributes = mMemeTextAttributes
+        textField.defaultTextAttributes = mMemeTextAttributes
+        textField.textAlignment = .center
+        textField.borderStyle = .none
+        textField.delegate = self
         
     }
     
@@ -62,10 +66,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
   
     
     // MARK: TextFieldDelegate
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.text = ""
-        return true;
-    }
+   
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -96,7 +97,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
             activityController.completionWithItemsHandler = {
                 (type,completed,items,error) in
                 
-                if error==nil{
+                if  completed{
                     self.save()
                 }
                 

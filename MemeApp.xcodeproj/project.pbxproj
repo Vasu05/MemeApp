@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57006CB72185B0870089F9EB /* MemeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57006CB62185B0870089F9EB /* MemeExtension.swift */; };
+		57006CBE218628E40089F9EB /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57006CBD218628E40089F9EB /* MemeModel.swift */; };
 		57012C0C218012C800D45584 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57012C0B218012C800D45584 /* AppDelegate.swift */; };
 		57012C0E218012C800D45584 /* MemeHomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57012C0D218012C800D45584 /* MemeHomePageVC.swift */; };
 		57012C11218012C800D45584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57012C0F218012C800D45584 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		57006CB62185B0870089F9EB /* MemeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeExtension.swift; sourceTree = "<group>"; };
+		57006CBD218628E40089F9EB /* MemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeModel.swift; path = ../../MemeModel.swift; sourceTree = "<group>"; };
 		57012C08218012C800D45584 /* MemeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57012C0B218012C800D45584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57012C0D218012C800D45584 /* MemeHomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeHomePageVC.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		57012C0A218012C800D45584 /* MemeApp */ = {
 			isa = PBXGroup;
 			children = (
+				57006CBD218628E40089F9EB /* MemeModel.swift */,
 				57012C0B218012C800D45584 /* AppDelegate.swift */,
 				57012C0D218012C800D45584 /* MemeHomePageVC.swift */,
 				57012C0F218012C800D45584 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 				57012C0E218012C800D45584 /* MemeHomePageVC.swift in Sources */,
 				57012C0C218012C800D45584 /* AppDelegate.swift in Sources */,
 				57006CB72185B0870089F9EB /* MemeExtension.swift in Sources */,
+				57006CBE218628E40089F9EB /* MemeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
