@@ -21,7 +21,8 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var mCameraBtn: UIButton!
     @IBOutlet weak var mAlbumsBtn: UIButton!
     @IBOutlet weak var mShareBtn: UIButton!
-    @IBOutlet weak var mDownloadBtn: UIButton!
+    @IBOutlet weak var mCancelBtn: UIButton!
+    
     @IBOutlet weak var mMemedView: UIView!
     
     var memedImage :UIImage!
@@ -117,6 +118,11 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
         self.photoPermission()
     }
     
+    @IBAction func cancelBtnPressed(_ sender:Any){
+        mImageView.image = nil
+        mTopTextField.text = ""
+        mBottomTextField.text = ""
+    }
     
     
     func openImagePickerController(_ buttonType:UIButton) -> Void {
@@ -138,17 +144,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     
     
-    
-    @IBAction func  saveImage(_ sender: Any)  {
-        
-        if  mImageView.image != nil{
-            memedImage = self.generateMemedImage()
-        UIImageWriteToSavedPhotosAlbum(memedImage,self ,#selector(image(_:didFinishSavingWithError:contextInfo:)),nil)
-            
-        }else{
-            showDialog(title: "Error", desc: "Please add image to view")
-        }
-    }
+   
     
   
 }

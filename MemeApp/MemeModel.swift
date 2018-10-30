@@ -19,7 +19,7 @@ class MemeModel: NSObject{
         var memedImage: UIImage!
         
         init(_ toptext :String, _ bottomText:String, _ originalImage:UIImage ,_ memedImage:UIImage) {
-            
+
             self.toptext = toptext
             self.bottomText = bottomText
             self.originalImages = originalImage

@@ -12,13 +12,7 @@ import Photos
 
 extension MemeHomePageVC{
     
-    
-    struct Meme {
-        var toptext : String!
-        var bottomText:String!
-        var originalImage    : UIImage!
-        var memedImage: UIImage!
-    }
+ 
     
     
     // MARK: Camera , Photos , File Saving Acesss Permission
@@ -121,15 +115,6 @@ extension MemeHomePageVC{
     
     
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        
-        if  error == nil  {
-            showDialog(title: "Success", desc: "Image saved successfully ! ")
-        }else{
-            showDialog(title: "Error", desc: "Error Occured while saving photos ! ")
-            
-        }
-    }
     
     
     func showDialog(title:String,desc:String)  {
@@ -153,7 +138,7 @@ extension MemeHomePageVC{
     
     func save() {
         
-        _ =  MemeModel( mTopTextField.text!, mBottomTextField.text!, mImageView.image!, memedImage)
+        _ = MemeModel(mTopTextField.text!, mBottomTextField.text!,mImageView.image!, memedImage!)
     }
     
 }
