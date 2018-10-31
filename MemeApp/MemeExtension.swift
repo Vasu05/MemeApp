@@ -127,17 +127,18 @@ extension MemeHomePageVC{
     
     func generateMemedImage() -> UIImage {
         
-        
+        mToolbar.isHidden = true
         UIGraphicsBeginImageContext(self.mMemedView.frame.size)
         mMemedView.drawHierarchy(in: self.mMemedView.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
+        mToolbar.isHidden = false
         return memedImage
     }
     
     func save() {
-        
+   
         memedImage = generateMemedImage()
         
         _ = MemeModel(mTopTextField.text!, mBottomTextField.text!,mImageView.image!, memedImage!)

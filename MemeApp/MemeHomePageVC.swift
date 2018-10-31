@@ -29,6 +29,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     @IBOutlet weak var mAlbumsBtn: UIBarButtonItem!
     
+    @IBOutlet weak var mToolbar: UIToolbar!
     var memedImage :UIImage!
     
     override func viewDidLoad() {

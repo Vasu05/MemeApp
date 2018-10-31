@@ -164,6 +164,7 @@
                         <outlet property="mImageView" destination="PPT-wg-3sG" id="OEc-av-cnG"/>
                         <outlet property="mMemedView" destination="hrc-rI-jv2" id="mcQ-jZ-s4w"/>
                         <outlet property="mShareBtn" destination="Mxe-0s-X34" id="xE5-yF-yIv"/>
+                        <outlet property="mToolbar" destination="ixX-2U-4tG" id="iS3-Ph-HzT"/>
                         <outlet property="mTopTextField" destination="hYh-2l-j4V" id="b5B-VT-ifv"/>
                     </connections>
                 </viewController>
