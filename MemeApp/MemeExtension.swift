@@ -22,7 +22,7 @@ extension MemeHomePageVC{
         
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
-            self.openImagePickerController(mCameraBtn)
+            self.openImagePickerController( mCameraBtn)
             
             // The user has previously granted access to the camera.
             break;
@@ -64,7 +64,7 @@ extension MemeHomePageVC{
         case .authorized:
             print("PHAuthorizationStatus.Authorized")
             print("photos permission granted")
-            self.openImagePickerController(self.mAlbumsBtn)
+            self.openImagePickerController(mAlbumsBtn)
             break
             
             
@@ -137,6 +137,8 @@ extension MemeHomePageVC{
     }
     
     func save() {
+        
+        memedImage = generateMemedImage()
         
         _ = MemeModel(mTopTextField.text!, mBottomTextField.text!,mImageView.image!, memedImage!)
     }

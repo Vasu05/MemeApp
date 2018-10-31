@@ -18,12 +18,16 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     @IBOutlet weak var mBottomTextField: UITextField!
     
-    @IBOutlet weak var mCameraBtn: UIButton!
-    @IBOutlet weak var mAlbumsBtn: UIButton!
+   // @IBOutlet weak var mCameraBtn: UIButton!
+  //  @IBOutlet weak var mAlbumsBtn: UIButton!
     @IBOutlet weak var mShareBtn: UIButton!
     @IBOutlet weak var mCancelBtn: UIButton!
     
     @IBOutlet weak var mMemedView: UIView!
+    
+    @IBOutlet weak var mCameraBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var mAlbumsBtn: UIBarButtonItem!
     
     var memedImage :UIImage!
     
@@ -99,6 +103,8 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
                 (type,completed,items,error) in
                 
                 if  completed{
+                   
+                    self.showDialog(title: "Image", desc: "Image Saved Successfuly!")
                     self.save()
                 }
                 
@@ -125,7 +131,7 @@ class MemeHomePageVC: UIViewController,UITextFieldDelegate,UIImagePickerControll
     }
     
     
-    func openImagePickerController(_ buttonType:UIButton) -> Void {
+    func openImagePickerController(_ buttonType:UIBarButtonItem) -> Void {
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
