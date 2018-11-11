@@ -14,6 +14,10 @@
 		57012C11218012C800D45584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57012C0F218012C800D45584 /* Main.storyboard */; };
 		57012C13218012CB00D45584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57012C12218012CB00D45584 /* Assets.xcassets */; };
 		57012C16218012CB00D45584 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57012C14218012CB00D45584 /* LaunchScreen.storyboard */; };
+		578E05252190B90B00B9BBE8 /* MemeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E05242190B90B00B9BBE8 /* MemeListVC.swift */; };
+		578E05282190B98000B9BBE8 /* MemeGridVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E05272190B98000B9BBE8 /* MemeGridVC.swift */; };
+		578E052B2190BF6500B9BBE8 /* TbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E05292190BF6400B9BBE8 /* TbleCell.swift */; };
+		578E052C2190BF6500B9BBE8 /* TbleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578E052A2190BF6400B9BBE8 /* TbleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		57012C12218012CB00D45584 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57012C15218012CB00D45584 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57012C17218012CB00D45584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		578E05242190B90B00B9BBE8 /* MemeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeListVC.swift; sourceTree = "<group>"; };
+		578E05272190B98000B9BBE8 /* MemeGridVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeGridVC.swift; sourceTree = "<group>"; };
+		578E05292190BF6400B9BBE8 /* TbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TbleCell.swift; sourceTree = "<group>"; };
+		578E052A2190BF6400B9BBE8 /* TbleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TbleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,8 @@
 		57012C0A218012C800D45584 /* MemeApp */ = {
 			isa = PBXGroup;
 			children = (
+				578E05262190B96C00B9BBE8 /* MemeGridVC */,
+				578E05232190B8ED00B9BBE8 /* MemeListVC */,
 				57006CC12186CDA20089F9EB /* MemeModel.swift */,
 				57012C0B218012C800D45584 /* AppDelegate.swift */,
 				57012C0D218012C800D45584 /* MemeHomePageVC.swift */,
@@ -68,6 +78,24 @@
 				57006CB62185B0870089F9EB /* MemeExtension.swift */,
 			);
 			path = MemeApp;
+			sourceTree = "<group>";
+		};
+		578E05232190B8ED00B9BBE8 /* MemeListVC */ = {
+			isa = PBXGroup;
+			children = (
+				578E05242190B90B00B9BBE8 /* MemeListVC.swift */,
+				578E05292190BF6400B9BBE8 /* TbleCell.swift */,
+				578E052A2190BF6400B9BBE8 /* TbleCell.xib */,
+			);
+			path = MemeListVC;
+			sourceTree = "<group>";
+		};
+		578E05262190B96C00B9BBE8 /* MemeGridVC */ = {
+			isa = PBXGroup;
+			children = (
+				578E05272190B98000B9BBE8 /* MemeGridVC.swift */,
+			);
+			path = MemeGridVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578E052C2190BF6500B9BBE8 /* TbleCell.xib in Resources */,
 				57012C16218012CB00D45584 /* LaunchScreen.storyboard in Resources */,
 				57012C13218012CB00D45584 /* Assets.xcassets in Resources */,
 				57012C11218012C800D45584 /* Main.storyboard in Resources */,
@@ -141,6 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578E052B2190BF6500B9BBE8 /* TbleCell.swift in Sources */,
+				578E05282190B98000B9BBE8 /* MemeGridVC.swift in Sources */,
+				578E05252190B90B00B9BBE8 /* MemeListVC.swift in Sources */,
 				57012C0E218012C800D45584 /* MemeHomePageVC.swift in Sources */,
 				57012C0C218012C800D45584 /* AppDelegate.swift in Sources */,
 				57006CB72185B0870089F9EB /* MemeExtension.swift in Sources */,

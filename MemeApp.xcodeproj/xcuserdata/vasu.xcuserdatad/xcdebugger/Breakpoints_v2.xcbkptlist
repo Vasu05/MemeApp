@@ -9,22 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeApp/MemeHomePageVC.swift"
-<<<<<<< HEAD
-            timestampString = "562316243.903318"
+            filePath = "MemeApp/MemeGridVC/MemeGridVC.swift"
+            timestampString = "563181906.277324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "cameraPermission()"
-=======
-            timestampString = "562412362.524861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "albumsBtnPressed(_:)"
->>>>>>> camera-permission
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
